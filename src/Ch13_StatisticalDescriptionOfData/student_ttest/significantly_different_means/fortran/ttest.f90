@@ -3,6 +3,9 @@ subroutine ttest(data1, n1, data2, n2, t, prob)
    ! returns the Student's "t" and its significance as "prob".
    ! Data are assumed to be drawn from populations with the same
    ! true variance.
+
+   
+   ! Small values of "prob" indicates that the arrays have different means.
    use lib_stat
    implicit none
    real(8), intent(in)                  :: data1(n1), data2(n2)
