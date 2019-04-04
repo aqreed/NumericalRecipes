@@ -11,7 +11,8 @@ program test_avevar
    real(8), dimension(:), allocatable  :: data
 
    n = iargc()
-   ! captures 1st argument, put it as first element of arrat
+
+   ! captures 1st argument, put it as first element of array
    call getarg(1, x)
    read(x, '(f10.0)') y
    data = (/y/)
@@ -23,6 +24,7 @@ program test_avevar
       data = [data, y]
    end do
    
+   ! calls the subroutine
    call avevar(data, n, ave, var)
 
    ! output to stdout
