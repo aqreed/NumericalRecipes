@@ -54,20 +54,20 @@ module lib_stat
       do m = 1, imax
          em = m
          tem = em + em
-         d = (em * (b - m) * x) / ((qam + tem) * (a + tem))
+         d = em * (b - m) * x / ((qam + tem) * (a + tem))
          ap = az + d * am
          bp = bz + d * bm
          d = -((a + em) * (qab + em) * x) / ((a + tem) * (qap + tem))
          app = ap + d * az
          bpp = bp + d * bz
          aold = az
-         am = ap / app
+         am = ap / bpp
          bm = bp / bpp
          az = app / bpp
          bz = 1.0d0
 
          if (abs(az - aold) < eps * abs(az)) then
-            ! write(*, *) 'BETACF: convergence OK'
+            !write(*, *) 'BETACF: convergence OK'
             exit
          end if
 
@@ -86,9 +86,9 @@ module lib_stat
       implicit none
       real(8), intent(in)     :: a, b, x
       real(8)                 :: bt, betai
-      
+
       if ((x < 0.0d0) .or. (x > 1.0d0)) then
-         write(*, *) 'BETAI: bad argument fo x' 
+         write(*, *) 'BETAI: bad argument for x' 
          stop
       end if
 
