@@ -30,9 +30,9 @@ end subroutine tutest
 program main
    ! COMPILATION:
    ! gfortran -c lib_stat.f90 tutest.f90
-   ! gfortran lib_stat.o tutest.o -o tutest
+   ! gfortran lib_stat.o tutest.o -o fmain_tutest
    ! EXECUTION:
-   ! ./tutest 
+   ! ./fmain_tutest
    implicit none
    integer                              :: n1, n2, i
    real(8), dimension(:), allocatable   :: data1, data2

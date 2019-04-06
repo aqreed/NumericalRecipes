@@ -33,9 +33,9 @@ end subroutine ttest
 program main
    ! COMPILATION:
    ! gfortran -c lib_stat.f90 ttest.f90
-   ! gfortran lib_stat.o ttest.o -o ttest
+   ! gfortran lib_stat.o ttest.o -o fmain_ttest
    ! EXECUTION:
-   ! ./ttest 
+   ! ./fmain_ttest
    implicit none
    integer                              :: n1, n2, i
    real(8), dimension(:), allocatable   :: data1, data2
