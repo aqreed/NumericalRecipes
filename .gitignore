@@ -30,3 +30,4 @@ MANIFEST
 # Fortran
 *.mod
 *.o
+fmain*
