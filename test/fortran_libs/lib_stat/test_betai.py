@@ -7,12 +7,11 @@
     Requires previous compilation of Fortran source code:
 
         $ gfortran -c lib_stat.f90 test_betai.f90
-        $ gfortran lib_stat.o test_betai.o -o test_betai
+        $ gfortran lib_stat.o test_betai.o -o fmain_test_betai
 """
 
 
 import pytest
-import re
 
 from subprocess import check_output
 from numpy.testing import assert_almost_equal
@@ -29,7 +28,7 @@ def fortran_betai(a, b, x):
         a = str(a)
         b = str(b)
         x = str(x)
-        return float(check_output(['./test_betai',
+        return float(check_output(['./fmain_test_betai',
                                    a, b, x]).decode("utf-8").split('\n')[0])
 
 
@@ -76,8 +75,8 @@ def test_betai_recurrence():
     a, b, x = 1, 10, 0.15
 
     calculated_value = fortran_betai(a, b, x) - \
-                       x*fortran_betai(a - 1, b, x) - \
-                       (1 - x)*fortran_betai(a, b-1, x)
+                       x * fortran_betai(a - 1, b, x) - \
+                       (1 - x) * fortran_betai(a, b-1, x)
 
     expected_value = 0
 

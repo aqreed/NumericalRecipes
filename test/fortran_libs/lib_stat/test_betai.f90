@@ -1,7 +1,7 @@
 program test_betai
    ! COMPILATION:
    ! gfortran -c lib_stat.f90 test_betai.f90
-   ! gfortran lib_stat.o test_betai.o -o test_betai
+   ! gfortran lib_stat.o test_betai.o -o fmain_test_betai
    use lib_stat
    implicit none
 

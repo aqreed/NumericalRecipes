@@ -1,7 +1,7 @@
 program test_avevar
    ! COMPILATION:
    ! gfortran -c lib_stat.f90 test_avevar.f90
-   ! gfortran lib_stat.o test_avevar.o -o test_avevar
+   ! gfortran lib_stat.o test_avevar.o -o fmain_test_avevar
    use lib_stat
    implicit none
 

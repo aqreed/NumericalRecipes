@@ -7,7 +7,7 @@
     Requires previous compilation of Fortran source code:
 
         $ gfortran -c lib_stat.f90 test_gammaln.f90
-        $ gfortran lib_stat.o test_gammaln.o -o test_gammaln
+        $ gfortran lib_stat.o test_gammaln.o -o fmain_test_gammaln
 """
 
 
@@ -18,7 +18,7 @@ from numpy.testing import assert_almost_equal
 
 
 def fortran_gammaln(x):
-    return float((check_output(['./test_gammaln',
+    return float((check_output(['./fmain_test_gammaln',
                  str(x)])).decode("utf-8").split('\n')[0])
 
 

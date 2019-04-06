@@ -7,7 +7,7 @@
     Requires previous compilation of Fortran source code:
 
         $ gfortran -c lib_stat.f90 test_avevar.f90
-        $ gfortran lib_stat.o test_avevar.o -o test_avevar
+        $ gfortran lib_stat.o test_avevar.o -o fmain_test_avevar
 """
 
 
@@ -20,7 +20,7 @@ from numpy.testing import assert_almost_equal
 
 def fortran_avevar(data):
     aux = [str('') + str(s) + str('') for s in data]
-    aux.insert(0, './test_avevar')
+    aux.insert(0, './fmain_test_avevar')
     list_ = ((re.findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
     return list(map(float, list_))
 
