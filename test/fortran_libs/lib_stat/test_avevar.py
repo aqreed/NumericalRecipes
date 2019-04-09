@@ -12,16 +12,19 @@
 
 
 import pytest
-import re
 
+from re import findall
+from os import system
 from subprocess import check_output
 from numpy.testing import assert_almost_equal
 
 
+system('python compile_fortran.py')
+
 def fortran_avevar(data):
     aux = [str('') + str(s) + str('') for s in data]
     aux.insert(0, './fmain_test_avevar')
-    list_ = ((re.findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
+    list_ = ((findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
     return list(map(float, list_))
 
 

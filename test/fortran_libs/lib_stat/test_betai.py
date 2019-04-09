@@ -13,9 +13,13 @@
 
 import pytest
 
+from os import system
 from subprocess import check_output
 from numpy.testing import assert_almost_equal
 
+
+# Compilation of fortran code
+system('python compile_fortran.py')
 
 def fortran_betai(a, b, x):
     if (a < 0):
