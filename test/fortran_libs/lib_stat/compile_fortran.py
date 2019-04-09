@@ -1,6 +1,10 @@
 from os import system
 
 
+# Compile the fortran lib_stat source code to object file
+path = '../../../src/Ch13_StatisticalDescriptionOfData/student_ttest/lib_stat'
+system('gfortran -c ' + path + '/lib_stat.f90')
+
 # Compile the fortran tests source code to object files
 system('gfortran -c *.f90')
 
