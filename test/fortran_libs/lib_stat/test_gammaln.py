@@ -55,10 +55,10 @@ def test_gammaln_recurrence():
 
     x1, x2, x3, x4 = 0.001, 1.1, 3.32, 23.11
 
-    c1 = fortran_gammaln(x + 1) - (log(x) + fortran_gammaln(x))
-    c2 = fortran_gammaln(x + 1) - (log(x) + fortran_gammaln(x))
-    c3 = fortran_gammaln(x + 1) - (log(x) + fortran_gammaln(x))
-    c4 = fortran_gammaln(x + 1) - (log(x) + fortran_gammaln(x))
+    c1 = fortran_gammaln(x1 + 1) - (log(x1) + fortran_gammaln(x1))
+    c2 = fortran_gammaln(x2 + 1) - (log(x2) + fortran_gammaln(x2))
+    c3 = fortran_gammaln(x3 + 1) - (log(x3) + fortran_gammaln(x3))
+    c4 = fortran_gammaln(x4 + 1) - (log(x4) + fortran_gammaln(x4))
 
     calculated_value = [c1, c2, c3, c4]
     expected_value = [0, 0, 0, 0]
