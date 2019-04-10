@@ -1,11 +1,6 @@
-### Compile:
+### Student's t-test for significantly different variances
 
-```sh
-$ gfortran -c ../lib_stat/lib_stat.f90 tutest.f90
-$ gfortran lib_stat.o tutest.o -o fmain_tutest
-```
-### Execute:
+The Jupyter notebooks compare both Julia and Python versions of the code with the Fortran one.
 
-```sh
-$ ./fmain_tutest
-```
+The Fortran source code will be compiled along the necessary libs using a Python script placed in the lib folder. This script will be called at the beginning of each notebook.
+
