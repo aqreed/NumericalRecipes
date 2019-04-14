@@ -1,7 +1,6 @@
 subroutine tptest(data1, n1, data2, n2, t, prob)
    ! Given the arrays "data1" and "data2" of length "n", returns
    ! the Student's "t" for paired data and its significance as "prob".
-
    ! Small values of "prob" indicates that the arrays have different
    ! means.
    use lib_stat
@@ -56,10 +55,6 @@ program main
    data2 = (/70.15d0, 71.05d0, 71.95d0, 72.85d0, 70.45d0/)
    n2 = size(data2)
 
-   ! Test function:
-   do i = 1, 1000
-      call tptest(data1, n1, data2, n2, t, prob)
-   end do
-   
-   ! write(*,*) t, prob
+   call tptest(data1, n1, data2, n2, t, prob)
+   write(*,*) t, prob
 end program main

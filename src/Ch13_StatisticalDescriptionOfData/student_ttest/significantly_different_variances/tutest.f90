@@ -3,7 +3,6 @@ subroutine tutest(data1, n1, data2, n2, t, prob)
    ! returns the Student's "t" and its significance as "prob".
    ! Data are assumed to be drawn from populations with unequal
    ! variances.
-
    ! Small values of "prob" indicates that the arrays have different means.
    use lib_stat
    implicit none
@@ -46,10 +45,6 @@ program main
              5.0d0, 6.0d0, 7.0d0, 8.0d0, 9.0d0/)
    n2 = size(data2)
 
-   ! Test function:
-   do i = 1, 1000
-      call tutest(data1, n1, data2, n2, t, prob)
-   end do
-   
-   ! write(*,*) t, prob
+   call tutest(data1, n1, data2, n2, t, prob)
+   write(*,*) t, prob
 end program main
