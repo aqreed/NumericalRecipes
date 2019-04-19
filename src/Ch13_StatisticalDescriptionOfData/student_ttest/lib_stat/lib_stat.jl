@@ -1,31 +1,5 @@
 module lib_stat
-    # Contains functions: avevar, gammaln, betacf, betai
-
-    function avevar(data)
-        # Given an array "data" of length "n", returns
-        # its mean "ave" and its variance "var"
-        n = length(data)
-        ave = 0
-        var = 0
-        
-        # Mean
-        for i = 1:n
-            ave =  ave + data[i]
-        end
-        
-        ave = ave / n
-        
-        # Variance (of a sample population)
-        for i = 1:n
-            s = data[i] - ave
-            var =  var + s^2
-        end
-            
-        var = var / (n - 1)
-        
-        return ave, var
-    end
-
+    # Contains function(s): gammaln, betacf, betai
 
     function gammaln(xx)
         # Returns the value of ln[gamma(XX)] for X > 0. 
@@ -41,7 +15,7 @@ module lib_stat
 
         for i = 1:length(cof)
             x = x + 1
-            ser = ser + cof[i] / (x)
+            ser = ser + cof[i] / x
         end
 
         gammaln = tmp + log(stp * ser)
@@ -55,9 +29,7 @@ module lib_stat
         eps = 3.0e-7
         imax = 100
 
-        am = 1
-        bm = 1
-        az = 1
+        am, bm, az = 1, 1, 1
         qab = a + b
         qap = a + 1
         qam = a - 1
