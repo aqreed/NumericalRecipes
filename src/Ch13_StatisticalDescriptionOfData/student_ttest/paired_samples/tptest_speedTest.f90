@@ -5,6 +5,7 @@ subroutine tptest(data1, n1, data2, n2, t, prob)
    ! Small values of "prob" indicates that the arrays have different
    ! means.
    use lib_stat
+   use mod_avevar
    implicit none
    real(8), intent(in)                  :: data1(n1), data2(n2)
    integer, intent(in)                  :: n1, n2
