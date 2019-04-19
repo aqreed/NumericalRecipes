@@ -4,29 +4,6 @@ from numba import jit
 
 
 @jit(nopython=True)
-def avevar(data):
-    # Given an array "data" of length "n", returns
-    # its mean "ave" and its variance "var"
-    n = len(data)
-    ave, var = 0, 0
-
-    # Mean
-    for i in range(n):
-        ave = ave + data[i]
-
-    ave = ave / n
-
-    # Variance (of a sample population)
-    for i in range(len(data)):
-        s = data[i] - ave
-        var = var + s**2
-
-    var = var / (n - 1)
-
-    return ave, var
-
-
-@jit(nopython=True)
 def gammaln(xx):
     # Returns the value of ln[gamma(XX)] for X > 0.
     # Full accuracy is obtained for XX > 1.
@@ -41,7 +18,7 @@ def gammaln(xx):
 
     for i in range(len(cof)):
         x = x + 1
-        ser = ser + cof[i] / (x)
+        ser = ser + cof[i] / x
 
     gammaln = tmp + np.log(stp * ser)
     return gammaln
@@ -53,9 +30,7 @@ def betacf(a, b, x):
     eps = 3.0e-7
     imax = 100
 
-    am = 1
-    bm = 1
-    az = 1
+    am, bm, az = 1, 1, 1
     qab = a + b
     qap = a + 1
     qam = a - 1
