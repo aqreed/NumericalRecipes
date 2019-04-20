@@ -4,7 +4,8 @@ subroutine tutest(data1, n1, data2, n2, t, prob)
    ! Data are assumed to be drawn from populations with unequal
    ! variances.
    ! Small values of "prob" indicates that the arrays have different means.
-   use lib_stat
+   
+   use mod_betai
    use mod_avevar
    implicit none
    real(8), intent(in)                  :: data1(n1), data2(n2)
