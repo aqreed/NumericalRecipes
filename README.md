@@ -10,11 +10,5 @@ Each algorithm will have a separated directory containing source code and speed 
 - [algorithm]_speedTest.f90
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
- 
-Common functions and subroutines are placed in a folder one level up named lib_[topic], one file for each languague. The naming criteria for these files is:
-
-- lib_[topic].f90
-- lib_[topic].jl
-- lib_[topic].py
 
 Python will be also used for testing and to compile Fortran source code.
