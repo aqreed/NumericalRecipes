@@ -4,13 +4,11 @@
 """
 
 
-from os import system, path, chdir
+from os import system, path, getcwd, chdir
 
 
-# get current directory and change dir to it (thanks StackOverflow!)
-abspath = path.abspath(__file__)
-dname = path.dirname(abspath)
-chdir(dname)
+# get current directory and change dir to it
+chdir(getcwd())
 
 # Compile Fortran source code to object file
 system('gfortran -c lib_stat.f90 ../../avevar/avevar.f90')
