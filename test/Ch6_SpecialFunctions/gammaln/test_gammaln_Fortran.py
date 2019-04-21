@@ -1,13 +1,9 @@
 """
-    Unit tests of the Log Gamma function
+    Python interface for the unit tests of the
+    Log Gamma Fortran function.
 
     Expected values extracted from:
         [URL] https://keisan.casio.com/exec/system/1180573442
-
-    Requires previous compilation of Fortran source code:
-
-        $ gfortran -c gammaln.f90 test_gammaln.f90
-        $ gfortran gammaln.o test_gammaln.o -o ftest_gammaln
 """
 
 
