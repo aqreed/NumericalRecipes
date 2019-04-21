@@ -7,6 +7,8 @@ I will try to answer this question using the algorithms found in Press, W. H., F
 Each algorithm will have a separated directory containing source code and speed test in the compiled languages (Fortran, C, C++), alongside two Jupyter notebooks to compare Julia and Python scripts time execution against them. The naming criteria is:
 
 - [algorithm].f90
+- [algorithm].jl
+- [algorithm].py
 - [algorithm]_speedTest.f90
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
