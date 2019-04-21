@@ -1,7 +1,8 @@
 program test_gammaln
    ! COMPILATION:
-   ! gfortran -c lib_stat.f90 test_gammaln.f90
-   ! gfortran lib_stat.o test_gammaln.o -o fmain_test_gammaln
+   ! gfortran -c gammaln.f90 test_gammaln.f90
+   ! gfortran gammaln.o test_gammaln.o -o ftest_gammaln
+
    use mod_gammaln
    implicit none
 
