@@ -32,3 +32,4 @@ MANIFEST
 *.o
 fmain*
 fspeed*
+ftest*
