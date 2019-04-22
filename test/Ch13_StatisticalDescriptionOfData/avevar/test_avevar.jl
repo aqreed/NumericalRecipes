@@ -6,6 +6,8 @@
 =#
 
 
+using Test
+
 include("../../../src/Ch13_StatisticalDescriptionOfData/avevar/avevar.jl")
 using .mod_avevar: avevar
 
@@ -18,7 +20,7 @@ function test_avevar_10()
     calculated_value = avevar(data)[1]
     expected_value = 1.0
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -30,7 +32,7 @@ function test_avevar_11()
     calculated_value = avevar(data)[1]
     expected_value = 0.0
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -42,7 +44,7 @@ function test_avevar_12()
     calculated_value = avevar(data)[1]
     expected_value = 3
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -54,7 +56,7 @@ function test_avevar_20()
     calculated_value = avevar(data)[2]
     expected_value = 0.0
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -66,7 +68,7 @@ function test_avevar_21()
     calculated_value = avevar(data)[2]
     expected_value = 2.5
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -78,5 +80,5 @@ function test_avevar_22()
     calculated_value = avevar(data)[2]
     expected_value = 10.0
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end

@@ -6,6 +6,8 @@
 =#
 
 
+using Test
+
 include("../../../src/Ch6_SpecialFunctions/gammaln/gammaln.jl")
 using .mod_gammaln: gammaln
 
@@ -25,7 +27,7 @@ function test_gammaln()
     expected_value = [4.599479878042021722514, 0,
                       0, 3.178053830347945619647]
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
 
 
@@ -48,5 +50,5 @@ function test_gammaln_recurrence()
     calculated_value = [c1, c2, c3, c4]
     expected_value = [0, 0, 0, 0]
 
-    return isapprox(calculated_value, expected_value; atol=1e-8)
+    @test isapprox(calculated_value, expected_value; atol=1e-8)
 end
