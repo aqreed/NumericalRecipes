@@ -7,13 +7,9 @@
 
 
 import pytest
-import os
-import sys
+import nr
 import numpy as np
 from numpy.testing import assert_almost_equal
-
-sys.path.append(os.path.realpath('../../../src/Ch6_SpecialFunctions/gammaln'))
-from gammaln import gammaln
 
 
 def test_gammaln():
@@ -22,10 +18,10 @@ def test_gammaln():
     """
     x1, x2, x3, x4 = 0.01, 1.0, 2.0, 5.0
 
-    c1 = gammaln(x1)
-    c2 = gammaln(x2)
-    c3 = gammaln(x3)
-    c4 = gammaln(x4)
+    c1 = nr.gammaln(x1)
+    c2 = nr.gammaln(x2)
+    c3 = nr.gammaln(x3)
+    c4 = nr.gammaln(x4)
 
     calculated_value = [c1, c2, c3, c4]
     expected_value = [4.599479878042021722514, 0,
@@ -45,10 +41,10 @@ def test_gammaln_recurrence():
 
     x1, x2, x3, x4 = 0.001, 1.1, 3.32, 23.11
 
-    c1 = gammaln(x1 + 1) - (np.log(x1) + gammaln(x1))
-    c2 = gammaln(x2 + 1) - (np.log(x2) + gammaln(x2))
-    c3 = gammaln(x3 + 1) - (np.log(x3) + gammaln(x3))
-    c4 = gammaln(x4 + 1) - (np.log(x4) + gammaln(x4))
+    c1 = nr.gammaln(x1 + 1) - (np.log(x1) + nr.gammaln(x1))
+    c2 = nr.gammaln(x2 + 1) - (np.log(x2) + nr.gammaln(x2))
+    c3 = nr.gammaln(x3 + 1) - (np.log(x3) + nr.gammaln(x3))
+    c4 = nr.gammaln(x4 + 1) - (np.log(x4) + nr.gammaln(x4))
 
     calculated_value = [c1, c2, c3, c4]
     expected_value = [0, 0, 0, 0]
