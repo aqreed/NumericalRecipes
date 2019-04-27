@@ -15,7 +15,7 @@ from numpy.testing import assert_almost_equal
 
 
 # Compile the Fortran tests source code to object files
-path = '../../../src/Ch6_SpecialFunctions/gammaln'
+path = '../../../src/nr/Ch6_SpecialFunctions/gammaln'
 system('gfortran -c ' + path + '/gammaln.f90 test_gammaln.f90')
 system('gfortran gammaln.o test_gammaln.o -o ftest_gammaln')  # Link objects
 system('rm *.o *.mod')  # Remove unnecessary objects and module
