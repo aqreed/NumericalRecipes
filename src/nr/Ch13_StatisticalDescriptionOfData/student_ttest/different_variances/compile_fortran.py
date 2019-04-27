@@ -4,11 +4,8 @@
 """
 
 
-from os import system, path, getcwd, chdir
+from os import system, path
 
-
-# get current directory and change dir to it
-chdir(getcwd())
 
 # Compile Fortran source code to object file
 system('gfortran -c ../../../Ch6_SpecialFunctions/betacf/betacf.f90')

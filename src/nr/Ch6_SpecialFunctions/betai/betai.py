@@ -1,19 +1,6 @@
 import numpy as np
-import os
 import sys
-
-
-# get current directory and change dir to it
-abspath = os.path.abspath(__file__)
-dname = os.path.dirname(abspath)
-os.chdir(dname)
-
-# add to path the lib paths
-sys.path.append(os.path.realpath('../gammaln'))
-from gammaln import gammaln
-
-sys.path.append(os.path.realpath('../betacf'))
-from betacf import betacf
+import nr
 
 
 def betai(a, b, x):
@@ -27,15 +14,15 @@ def betai(a, b, x):
     if ((x == 0) or (x == 1)):
         bt = 0
     else:
-        bt = np.exp(gammaln(a + b) - gammaln(a) - gammaln(b) +
+        bt = np.exp(nr.gammaln(a + b) - nr.gammaln(a) - nr.gammaln(b) +
                     a * np.log(x) + b * np.log(1 - x))
 
     # Continued fraction
     if (x < ((a + 1) / (a + b + 2))):
         # ...directly
-        betai = bt * betacf(a, b, x) / a
+        betai = bt * nr.betacf(a, b, x) / a
         return betai
     else:
         # ...after symmetry transformation
-        betai = 1 - bt * betacf(b, a, 1 - x) / b
+        betai = 1 - bt * nr.betacf(b, a, 1 - x) / b
         return betai

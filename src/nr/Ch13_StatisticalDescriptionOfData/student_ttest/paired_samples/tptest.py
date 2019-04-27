@@ -1,13 +1,5 @@
 import numpy as np
-import os
-import sys
-
-
-sys.path.append(os.path.realpath('../../avevar'))
-from avevar import avevar
-
-sys.path.append(os.path.realpath('../../../Ch6_SpecialFunctions/betai'))
-from betai import betai
+import nr
 
 
 def tptest(data1, data2):
@@ -25,8 +17,8 @@ def tptest(data1, data2):
     else:
         n = n1
 
-    ave1, var1 = avevar(data1)
-    ave2, var2 = avevar(data2)
+    ave1, var1 = nr.avevar(data1)
+    ave2, var2 = nr.avevar(data2)
 
     cov = 0.0
     for i in range(n):
@@ -39,6 +31,6 @@ def tptest(data1, data2):
     t = (ave1 - ave2) / np.sqrt((var1 + var2 - 2.0 * cov) / n)
 
     # significance
-    prob = betai(0.5 * df, 0.5, df/(df + t**2))
+    prob = nr.betai(0.5 * df, 0.5, df/(df + t**2))
 
     return t, prob
