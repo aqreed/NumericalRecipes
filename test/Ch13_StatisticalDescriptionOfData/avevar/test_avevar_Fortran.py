@@ -9,22 +9,30 @@
 
 import pytest
 from re import findall
-from os import system
+from os import system, chdir, getcwd
 from subprocess import check_output
 from numpy.testing import assert_almost_equal
 
 
 # Compile the Fortran tests source code to object files
-path = '../../../src/nr/Ch13_StatisticalDescriptionOfData/avevar'
-system('gfortran -c ' + path + '/avevar.f90 test_avevar.f90')
+# the next chdir and stuff is needed due to pytest working from root dir
+path2fortran_source = '../../../src/nr/Ch13_StatisticalDescriptionOfData/avevar'
+path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/avevar'
+
+owd = getcwd()
+chdir('test/Ch13_StatisticalDescriptionOfData/avevar')
+
+system('gfortran -c ' + path2fortran_source + '/avevar.f90 test_avevar.f90')
 system('gfortran avevar.o test_avevar.o -o ftest_avevar')  # Link objects
 system('rm *.o *.mod')  # Remove unnecessary objects and module
+
+chdir(owd)
 
 
 # Fortran interface function
 def fortran_avevar(data):
     aux = [str('') + str(s) + str('') for s in data]
-    aux.insert(0, './ftest_avevar')
+    aux.insert(0, owd + '/' + path2fortran_test + '/ftest_avevar')
     list_ = ((findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
     return list(map(float, list_))
 

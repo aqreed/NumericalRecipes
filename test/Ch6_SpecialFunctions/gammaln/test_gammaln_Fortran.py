@@ -9,21 +9,29 @@
 
 import pytest
 import numpy as np
-from os import system
+from os import system, chdir, getcwd
 from subprocess import check_output
 from numpy.testing import assert_almost_equal
 
 
 # Compile the Fortran tests source code to object files
-path = '../../../src/nr/Ch6_SpecialFunctions/gammaln'
-system('gfortran -c ' + path + '/gammaln.f90 test_gammaln.f90')
+# the next chdir and stuff is needed due to pytest working from root dir
+path2fortran_source = '../../../src/nr/Ch6_SpecialFunctions/gammaln'
+path2fortran_test = 'test/Ch6_SpecialFunctions/gammaln'
+
+owd = getcwd()
+chdir(path2fortran_test)
+
+system('gfortran -c ' + path2fortran_source + '/gammaln.f90 test_gammaln.f90')
 system('gfortran gammaln.o test_gammaln.o -o ftest_gammaln')  # Link objects
 system('rm *.o *.mod')  # Remove unnecessary objects and module
+
+chdir(owd)
 
 
 # Fortran interface function
 def fortran_gammaln(x):
-    return float((check_output(['./ftest_gammaln',
+    return float((check_output([owd + '/' + path2fortran_test + '/ftest_gammaln',
                  str(x)])).decode("utf-8").split('\n')[0])
 
 
