@@ -8,7 +8,7 @@
 
 using Test
 
-include("../../../src/Ch13_StatisticalDescriptionOfData/avevar/avevar.jl")
+include("../../../src/nr/Ch13_StatisticalDescriptionOfData/avevar/avevar.jl")
 using .mod_avevar: avevar
 
 

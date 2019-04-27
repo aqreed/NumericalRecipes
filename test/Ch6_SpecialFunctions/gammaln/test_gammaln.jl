@@ -8,7 +8,7 @@
 
 using Test
 
-include("../../../src/Ch6_SpecialFunctions/gammaln/gammaln.jl")
+include("../../../src/nr/Ch6_SpecialFunctions/gammaln/gammaln.jl")
 using .mod_gammaln: gammaln
 
 
