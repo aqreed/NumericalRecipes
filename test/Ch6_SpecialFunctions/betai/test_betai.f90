@@ -1,8 +1,8 @@
 program test_betai
    ! COMPILATION:
-   ! gfortran -c lib_stat.f90 test_betai.f90
-   ! gfortran lib_stat.o test_betai.o -o fmain_test_betai
-   use lib_stat
+   ! gfortran -c betacf.f90 gammaln.f90 betai.f90 test_betai.f90
+   ! gfortran betacf.o gammaln.o betai.o test_betai.o -o ftest_betai
+   use mod_betai
    implicit none
 
    character(len = 100)                :: x
