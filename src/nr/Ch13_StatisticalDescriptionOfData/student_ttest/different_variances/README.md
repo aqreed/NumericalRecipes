@@ -4,7 +4,7 @@ The Jupyter notebooks compare both Julia and Python versions of the code with th
 
 | |Python|Julia|
 |-|------|-----|
-|Fortran| ~2.9 times slower| ~4 times faster|
+|Fortran| ~23.4 times slower| ~1.65 times faster|
 |C| TBD| TBD|
 |C++| TBD| TBD|
 

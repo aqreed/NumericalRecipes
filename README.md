@@ -28,7 +28,6 @@ Each algorithm will have a separated directory containing source code and speed 
 - [algorithm].f90
 - [algorithm].jl
 - [algorithm].py
-- [algorithm]_speedTest.f90
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
 
