@@ -13,11 +13,9 @@ subroutine tutest(data1, n1, data2, n2, t, prob)
    real(8)                              :: ave1, var1, ave2, var2, &
                                            df, var, t, prob
 
+
    call avevar(data1, n1, ave1, var1)
    call avevar(data2, n2, ave2, var2)
-
-   ! write(*,*) ave1, ave2
-   ! write(*,*) var1, var2
 
    ! Student's t
    t = (ave1 - ave2) / sqrt(var1/n1 + var2/n2)
@@ -34,11 +32,14 @@ program main
    ! gfortran betacf.o gammaln.o betai.o tutest.o -o fmain_tutest
    ! EXECUTION:
    ! ./fmain_tutest
+   
    implicit none
-   integer                              :: n1, n2, i
+   integer                              :: n1, n2, i, c1, c2, cr
    real(8), dimension(:), allocatable   :: data1, data2
-   real(8)                              :: t, prob
+   real(8)                              :: t, prob, time_exec
                                         
+
+   ! input data
    data1 = (/1.0d0, 2.0d0, 3.0d0, 4.0d0, &
              5.0d0, 6.0d0, 7.0d0, 8.0d0, 9.0d0/)
    n1 = size(data1)
@@ -47,6 +48,17 @@ program main
              5.0d0, 6.0d0, 7.0d0, 8.0d0, 9.0d0/)
    n2 = size(data2)
 
-   call tutest(data1, n1, data2, n2, t, prob)
-   write(*,*) t, prob
+   ! timing of the for loop
+   call system_clock(count_rate=cr)
+   call system_clock(c1)
+   
+   do i = 1, 1000000
+      call tutest(data1, n1, data2, n2, t, prob)
+   end do
+
+   call system_clock(c2)
+   
+   time_exec = (c2 - c1) / real(cr)
+
+   write(*,*) t, prob, time_exec
 end program main
