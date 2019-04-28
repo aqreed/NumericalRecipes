@@ -41,8 +41,8 @@ end subroutine tptest
 
 program main
    ! COMPILATION:
-   ! gfortran -c lib_stat.f90 tptest.f90
-   ! gfortran lib_stat.o tptest.o -o fmain_tptest
+   ! gfortran -c betacf.f90 gammaln.f90 betai.f90 tptest.f90
+   ! gfortran betacf.o gammaln.o betai.o tptest.o -o fmain_tptest
    ! EXECUTION:
    ! ./fmain_tptest
    implicit none

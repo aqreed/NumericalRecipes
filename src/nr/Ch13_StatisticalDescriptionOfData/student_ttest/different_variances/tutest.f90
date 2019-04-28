@@ -30,8 +30,8 @@ end subroutine tutest
 
 program main
    ! COMPILATION:
-   ! gfortran -c lib_stat.f90 tutest.f90
-   ! gfortran lib_stat.o tutest.o -o fmain_tutest
+   ! gfortran -c betacf.f90 gammaln.f90 betai.f90 tutest.f90
+   ! gfortran betacf.o gammaln.o betai.o tutest.o -o fmain_tutest
    ! EXECUTION:
    ! ./fmain_tutest
    implicit none
