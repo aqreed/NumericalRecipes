@@ -14,6 +14,7 @@ Install package `nr` with:
 Then, functions may be called as:
 
 ```python
+import nr
 nr.gammaln(1)
 ```
 Run tests with:
