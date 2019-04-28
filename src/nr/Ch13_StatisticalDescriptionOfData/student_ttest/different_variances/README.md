@@ -8,6 +8,6 @@ The Jupyter notebooks compare both Julia and Python versions of the code with th
 |C| TBD| TBD|
 |C++| TBD| TBD|
 
-_Note:_ this must be read as _"in a Python script, using a Python function is 2.9 times slower than calling Fortran executable code from the same script"_
+_Note:_ this must be read as _"in a Python script, using a Python function is 23.4 times slower than calling Fortran executable code from the same script"_
 
 The Fortran source code will be compiled along the necessary libs using a Python script (_compile_fortran.py_). This script will be called at the beginning of each notebook.
