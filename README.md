@@ -6,7 +6,7 @@ I will try to answer this question using the algorithms found in Press, W. H., F
 
 #### Python install
 
-Install package `nr` with:
+Install package `numericalrecipes` with:
 
 ``` console
   $ python setup.py install
@@ -14,7 +14,7 @@ Install package `nr` with:
 Then, functions may be called as:
 
 ```python
-import nr
+import numericalrecipes as nr
 nr.gammaln(1)
 ```
 Run tests with:
