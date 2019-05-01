@@ -1,13 +1,11 @@
-from __future__ import absolute_import
 from setuptools import setup, find_packages
-import os
 
 
 setup(
-    name='nr',
+    name='numericalrecipes',
     description='Numerical Recipes',
-    author='Andres Quezada Reed',
-    version='0.0.1',
+    author='aqreed',
+    version='0.1.0',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     test_suite='test'

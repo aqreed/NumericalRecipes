@@ -1,5 +1,5 @@
 import numpy as np
-import nr
+import numericalrecipes as nr
 
 
 def ttest(data1, data2):

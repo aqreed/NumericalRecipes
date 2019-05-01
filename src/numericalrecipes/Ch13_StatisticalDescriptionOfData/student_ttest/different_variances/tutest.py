@@ -1,5 +1,5 @@
 import numpy as np
-import nr
+import numericalrecipes as nr
 
 
 def tutest(data1, data2):

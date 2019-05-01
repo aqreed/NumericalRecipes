@@ -1,6 +1,6 @@
 import numpy as np
 import sys
-import nr
+import numericalrecipes as nr
 
 
 def betai(a, b, x):
