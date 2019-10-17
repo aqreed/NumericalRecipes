@@ -39,7 +39,7 @@ def test_betai_x1():
 
 def test_betai_symmetry():
     """
-        Checks relation Ix(a, b) = 1 - Ix-1(b, a)
+        Checks relation Ix(a, b) = 1 - I1-x(b, a)
     """
     a, b, x = 1, 10, 0.15
 
@@ -53,11 +53,10 @@ def test_betai_recurrence():
     """
         Checks relation Ix(a, b) = xIx(a−1, b) + (1−x)Ix(a, b−1)
     """
-    a, b, x = 1, 10, 0.15
+    a, b, x = 2, 10, 0.15
 
     calculated_value = nr.betai(a, b, x) - x * nr.betai(a - 1, b, x) - \
                        (1 - x) * nr.betai(a, b - 1, x)
-
     expected_value = 0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 1e-4)
