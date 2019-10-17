@@ -7,7 +7,7 @@
 
 
 import pytest
-import nr
+import numericalrecipes as nr
 from numpy.testing import assert_almost_equal
 
 
