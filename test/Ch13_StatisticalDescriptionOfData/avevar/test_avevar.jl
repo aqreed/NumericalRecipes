@@ -1,18 +1,12 @@
 #=
     Unit tests of the avevar function
 
-    Expected values extracted from:
+    Expected values obtained from:
         [URL] http://www.alcula.com/calculators/statistics/variance/
 =#
 
 
-using Test
-
-include("../../../src/nr/Ch13_StatisticalDescriptionOfData/avevar/avevar.jl")
-using .mod_avevar: avevar
-
-
-function test_avevar_10()
+@testset "test_avevar_10" begin
     #=
         Checks average values of an input dataset
     =#
@@ -24,7 +18,7 @@ function test_avevar_10()
 end
 
 
-function test_avevar_11()
+@testset "test_avevar_11" begin
     #=
         Checks average values of an input dataset
     =#
@@ -36,7 +30,7 @@ function test_avevar_11()
 end
 
 
-function test_avevar_12()
+@testset "test_avevar_12" begin
     #=
         Checks average values of an input dataset
     =#
@@ -48,7 +42,7 @@ function test_avevar_12()
 end
 
 
-function test_avevar_20()
+@testset "test_avevar_20" begin
     #=
         Checks variance (sample) values of an input dataset
     =#
@@ -60,7 +54,7 @@ function test_avevar_20()
 end
 
 
-function test_avevar_21()
+@testset "test_avevar_21" begin
     #=
         Checks variance (sample) values of an input dataset
     =#
@@ -72,7 +66,7 @@ function test_avevar_21()
 end
 
 
-function test_avevar_22()
+@testset "test_avevar_22" begin
     #=
         Checks variance (sample) values of an input dataset
     =#

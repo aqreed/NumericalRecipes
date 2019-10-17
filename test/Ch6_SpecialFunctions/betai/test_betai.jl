@@ -1,18 +1,12 @@
 #=
     Unit tests of the betai function
 
-    Expected values extracted from:
+    Expected values obtained from:
         [URL] https://www.encyclopediaofmath.org/index.php/Incomplete_beta-function
 =#
 
 
-using Test
-
-include("../../../src/nr/Ch6_SpecialFunctions/betai/betai.jl")
-using .mod_betai: betai
-
-
-function test_betai_x0()
+@testset "test_betai_x0" begin
     #=
         Checks betai output for x = 0
     =#
@@ -25,7 +19,7 @@ function test_betai_x0()
 end
 
 
-function test_betai_x1()
+@testset "test_betai_x1" begin
     #=
         Checks betai output for x = 1
     =#
@@ -38,7 +32,7 @@ function test_betai_x1()
 end
 
 
-function test_betai_symmetry()
+@testset "test_betai_symmetry" begin
     #=
         Checks relation Ix(a, b) = 1 - Ix-1(b, a)
     =#
@@ -51,7 +45,7 @@ function test_betai_symmetry()
 end
 
 
-function test_betai_recurrence()
+@testset "test_betai_recurrence" begin
     #=
         Checks relation Ix(a, b) = xIx(a−1, b) + (1−x)Ix(a, b−1)
     =#

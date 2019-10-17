@@ -1,18 +1,12 @@
 #=
     Unit tests of the Log Gamma function
 
-    Expected values extracted from:
+    Expected values obtained from:
         [URL] https://keisan.casio.com/exec/system/1180573442
 =#
 
 
-using Test
-
-include("../../../src/nr/Ch6_SpecialFunctions/gammaln/gammaln.jl")
-using .mod_gammaln: gammaln
-
-
-function test_gammaln()
+@testset "test_gammaln" begin
     #=
         Checks values x > 0
     =#
@@ -31,7 +25,7 @@ function test_gammaln()
 end
 
 
-function test_gammaln_recurrence()
+@testset "test_gammaln_recurrence" begin
     #=
         Gamma log function satisfies the recurrence relation:
             gamma(z+1) = z * gamma(z)
