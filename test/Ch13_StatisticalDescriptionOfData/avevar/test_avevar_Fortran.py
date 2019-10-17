@@ -5,8 +5,6 @@
     Expected values extracted from:
         [URL] http://www.alcula.com/calculators/statistics/variance/
 """
-
-
 import pytest
 from re import findall
 from os import system, chdir, getcwd
@@ -16,7 +14,7 @@ from numpy.testing import assert_almost_equal
 
 # Compile the Fortran tests source code to object files
 # the next chdir and stuff is needed due to pytest working from root dir
-path2fortran_source = '../../../src/nr/Ch13_StatisticalDescriptionOfData/avevar'
+path2fortran_source = '../../../src/numericalrecipes/Ch13_StatisticalDescriptionOfData/avevar'
 path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/avevar'
 
 owd = getcwd()

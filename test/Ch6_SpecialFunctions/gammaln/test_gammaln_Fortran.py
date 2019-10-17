@@ -5,8 +5,6 @@
     Expected values extracted from:
         [URL] https://keisan.casio.com/exec/system/1180573442
 """
-
-
 import pytest
 import numpy as np
 from os import system, chdir, getcwd
@@ -16,7 +14,7 @@ from numpy.testing import assert_almost_equal
 
 # Compile the Fortran tests source code to object files
 # the next chdir and stuff is needed due to pytest working from root dir
-path2fortran_source = '../../../src/nr/Ch6_SpecialFunctions/gammaln'
+path2fortran_source = '../../../src/numericalrecipes/Ch6_SpecialFunctions/gammaln'
 path2fortran_test = 'test/Ch6_SpecialFunctions/gammaln'
 
 owd = getcwd()

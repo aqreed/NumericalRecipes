@@ -9,8 +9,6 @@
         $ gfortran -c lib_stat.f90 test_betai.f90
         $ gfortran lib_stat.o test_betai.o -o fmain_test_betai
 """
-
-
 import pytest
 from os import system, chdir, getcwd
 from subprocess import check_output
@@ -19,9 +17,9 @@ from numpy.testing import assert_almost_equal
 
 # Compile the Fortran tests source code to object files
 # the next chdir and stuff is needed due to pytest working from root dir
-path2fortran_source = '../../../src/nr/Ch6_SpecialFunctions/betai'
-path2fortran_mod1 = '../../../src/nr/Ch6_SpecialFunctions/betacf'
-path2fortran_mod2 = '../../../src/nr/Ch6_SpecialFunctions/gammaln'
+path2fortran_source = '../../../src/numericalrecipes/Ch6_SpecialFunctions/betai'
+path2fortran_mod1 = '../../../src/numericalrecipes/Ch6_SpecialFunctions/betacf'
+path2fortran_mod2 = '../../../src/numericalrecipes/Ch6_SpecialFunctions/gammaln'
 path2fortran_test = 'test/Ch6_SpecialFunctions/betai'
 
 owd = getcwd()
