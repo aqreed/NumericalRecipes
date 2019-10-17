@@ -1,0 +1,64 @@
+matrix:
+  include:
+
+  - language: python
+
+    python:
+      - "3.6"
+
+    branches:
+      only:
+        - new_package_name
+
+    before_install:
+      # http://conda.pydata.org/docs/travis.html
+      - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      - bash miniconda.sh -b -p $HOME/miniconda
+      - export PATH="$HOME/miniconda/bin:$PATH"
+      - hash -r
+      - conda config --set always_yes yes --set changeps1 no
+      - conda update -q conda
+
+      # Useful for debugging any issues with conda
+      - conda info -a
+      - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
+      - source activate test-environment
+      - conda install numpy 
+      - pip install coverage pytest pytest-cov codecov
+
+    install:
+      - pip install -e .
+
+    script:
+      - pytest
+
+    after_success:
+      - pytest --cov
+      - codecov
+
+  - language: julia
+
+    julia:
+      - 1.1
+
+    branches:
+      only:
+        - new_package_name
+
+    notifications:
+      email: false
+
+    git:
+      depth: 99999999
+    ## uncomment the following lines to override the default test script
+    # script:
+    #  - julia -e 'Pkg.clone(pwd()); Pkg.build("NumericalRecipes"); Pkg.test("NumericalRecipes"; coverage=true)'
+
+    after_success:
+    # push coverage results to Coverall
+      - julia -e 'using Pkg; cd(Pkg.dir("NumericalRecipes")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
+    # push coverage results to Codecov
+      - julia -e 'using Pkg; cd(Pkg.dir("NumericalRecipes")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+    # Documenter
+      - julia -e 'using Pkg; ps=Pkg.PackageSpec(name="Documenter", version="0.19"); Pkg.add(ps); Pkg.pin(ps)'
+      - julia -e 'using Pkg; ENV["DOCUMENTER_DEBUG"] = "true"; cd(Pkg.dir("NumericalRecipes")); include(joinpath("docs", "make.jl"))'

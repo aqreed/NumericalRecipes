@@ -1,5 +1,18 @@
 # NumericalRecipes
 
+[![Build Status](https://travis-ci.com/aqreed/NumericalRecipes.svg?branch=new_package_name)](https://travis-ci.com/aqreed/NumericalRecipes)
+[![codecov.io](https://codecov.io/gh/aqreed/NumericalRecipes/branch/new_package_name/graph/badge.svg)](https://codecov.io/gh/aqreed/NumericalRecipes/branch/new_package_name)
+
+|  |  |
+| ------ | ------ |
+| Description | Julia vs Python vs Fortran comparison using "Numerical Recipes" |
+| Author | aqreed <aqreed@protonmail.com> |
+| Version | 0.0.1 |
+| Python Version | 3.6 |
+| Python Requires | Numpy |
+| Julia Version | 1.1 |
+| Julia Requires | Test |
+
 Is Julia as fast as Fortran, C or C++, and as easy as Python? 
 
 I will try to answer this question using the algorithms found in Press, W. H., Flannery, B. P., Teukolsky, S. A., Vetterling, W. T., 1986, _Numerical Recipes. The Art of Scientific Computing_, Cambridge University Press, 818 p
