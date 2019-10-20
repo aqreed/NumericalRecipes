@@ -1,11 +1,9 @@
 """
     Unit tests of the avevar function
 
-    Expected values extracted from:
+    Expected values obtained from:
         [URL] http://www.alcula.com/calculators/statistics/variance/
 """
-
-
 import pytest
 import numericalrecipes as nr
 from numpy.testing import assert_almost_equal

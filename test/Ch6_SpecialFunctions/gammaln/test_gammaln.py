@@ -4,8 +4,6 @@
     Expected values extracted from:
         [URL] https://keisan.casio.com/exec/system/1180573442
 """
-
-
 import pytest
 import numericalrecipes as nr
 import numpy as np

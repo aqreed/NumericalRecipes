@@ -4,8 +4,6 @@
     Expected values extracted from:
         [URL] https://www.encyclopediaofmath.org/index.php/Incomplete_beta-function
 """
-
-
 import pytest
 import numericalrecipes as nr
 from os import system
