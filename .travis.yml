@@ -53,7 +53,7 @@ matrix:
       depth: 99999999
     ## uncomment the following lines to override the default test script
     script:
-      - julia -e 'Pkg.clone(pwd()); Pkg.build("NumericalRecipes"); Pkg.test("NumericalRecipes"; coverage=true)'
+      - julia -e 'using Pkg; Pkg.clone(pwd()); Pkg.build("NumericalRecipes"); Pkg.test("NumericalRecipes"; coverage=true)'
 
     after_success:
     # push coverage results to Coverall
