@@ -65,9 +65,8 @@ Press "]" to enter `pkg` mode. Then activate the pkg:
 Then, return to normal mode to import functions, which may be called as:
 
 ```julia
-  julia> import NumericalRecipes
-  julia> NumericalRecipes.gammaln(1)
-  -3.413624938275461e-11
+import NumericalRecipes
+NumericalRecipes.gammaln(1)
 ```
 Run tests with:
 
@@ -75,13 +74,4 @@ Run tests with:
   julia> using Pkg
 
   julia> Pkg.test("NumericalRecipes")
-     Testing NumericalRecipes
-   Resolving package versions...
-Test Summary: | Pass  Total
-test_betai    |    4      4
-Test Summary: | Pass  Total
-test_gamma    |    2      2
-Test Summary: | Pass  Total
-test_avevar   |    6      6
-   Testing NumericalRecipes tests passed
 ```
