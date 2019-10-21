@@ -6,6 +6,23 @@
 =#
 
 
+@testset "test_gammaln_error" begin
+    #=
+        Checks gammaln erroneous input
+    =#
+    x = -0.1
+
+    let err = nothing
+        try
+            gammaln(x)
+        catch err
+        end
+
+        @test err isa Exception
+    end
+end
+
+
 @testset "test_gammaln" begin
     #=
         Checks values x > 0

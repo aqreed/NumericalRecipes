@@ -1,8 +1,8 @@
 # Contains function(s): betacf
 
 function betacf(a, b, x)
-    # Continued fraction for incomplete beta function,
-    # used by "betai"
+    # Continued fraction for incomplete
+    # beta function, used by "betai"
     eps = 3.0e-7
     imax = 100
 

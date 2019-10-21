@@ -7,6 +7,23 @@
 =#
 
 
+@testset "test_betacf_error" begin
+    #=
+        Checks betacf erroneous input
+    =#
+    a, b, x = 1, 1, 1
+
+    let err = nothing
+        try
+            betacf(a, b, x)
+        catch err
+        end
+
+        @test err isa Exception
+    end
+end
+
+
 @testset "test_betacf" begin
     #=
         Checks betacf output

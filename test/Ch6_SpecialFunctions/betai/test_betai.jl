@@ -6,6 +6,23 @@
 =#
 
 
+@testset "test_betai_error" begin
+    #=
+        Checks betai erroneous input
+    =#
+    a, b, x = 0.5, 0.5, -0.1
+
+    let err = nothing
+        try
+            betai(a, b, x)
+        catch err
+        end
+
+        @test err isa Exception
+    end
+end
+
+
 @testset "test_betai_x0" begin
     #=
         Checks betai output for x = 0

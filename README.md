@@ -9,9 +9,9 @@
 | Author | aqreed <aqreed@protonmail.com> |
 | Version | 0.0.1 |
 | Python Version | 3.6 |
-| Python Requires | Numpy |
+| Python Requires | Numpy, Numba, Scipy |
 | Julia Version | 1.1 |
-| Julia Requires | Test |
+| Julia Requires | HypothesisTests, Test |
 
 Is Julia as fast as Fortran, C or C++, and as easy as Python? 
 
