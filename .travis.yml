@@ -44,7 +44,7 @@ matrix:
 
     branches:
       only:
-        - travis-ci
+        - new_package_name
 
     notifications:
       email: false
