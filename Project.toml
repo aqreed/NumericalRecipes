@@ -4,5 +4,5 @@ authors = ["aqreed"]
 version = "0.0.1"
 
 [deps]
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 HypothesisTests = "09f84164-cd44-5f33-b23f-e6b0d136a0d5"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
