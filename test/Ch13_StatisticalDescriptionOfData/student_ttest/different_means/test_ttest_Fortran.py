@@ -45,7 +45,7 @@ def fortran_ttest(data1, data2):
     aux_ += [str('') + str(s) + str('') for s in data2]
     aux += aux_
 
-    list_ = ((findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
+    list_ = ((findall(r"\d+\.\d+", check_output(aux).decode("utf-8"))))
 
     return list(map(float, list_))  # returns student's t and significance
 
