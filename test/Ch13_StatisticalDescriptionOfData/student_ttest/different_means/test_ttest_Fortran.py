@@ -8,7 +8,7 @@ import pytest
 import numpy as np
 from re import findall
 from os import system, chdir, getcwd
-from subprocess import check_output
+from subprocess import run
 from scipy.stats import ttest_ind
 from numpy.testing import assert_almost_equal
 
@@ -38,16 +38,15 @@ chdir(owd)
 def fortran_ttest(data1, data2):
     aux = [str(len(data1))]
     aux += [str('') + str(s) + str('') for s in data1]
-
     aux.insert(0, owd + '/' + path2fortran_test + '/ftest_ttest')
 
     aux_ = [str(len(data2))]
     aux_ += [str('') + str(s) + str('') for s in data2]
     aux += aux_
 
-    list_ = ((findall(r"\d+\.\d+", check_output(aux).decode("utf-8"))))
-
-    return list(map(float, list_))  # returns student's t and significance
+    result = run(aux, capture_output=True)
+    list_ = findall(r"\d+\.\d+", result.stdout.decode("utf-8"))
+    return [float(i) for i in list_]  # returns student's t and significance
 
 
 def test_ttest_means_0():
