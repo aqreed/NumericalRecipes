@@ -2,37 +2,36 @@
     Python interface for the unit tests of the
     avevar Fortran function.
 
-    Expected values extracted from:
+    Expected values obtained from:
         [URL] http://www.alcula.com/calculators/statistics/variance/
 """
 import pytest
 from re import findall
 from os import system, chdir, getcwd
-from subprocess import check_output
+from subprocess import run
 from numpy.testing import assert_almost_equal
 
 
 # Compile the Fortran tests source code to object files
-# the next chdir and stuff is needed due to pytest working from root dir
 path2fortran_source = '../../../src/numericalrecipes/Ch13_StatisticalDescriptionOfData/avevar'
 path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/avevar'
 
 owd = getcwd()
-chdir('test/Ch13_StatisticalDescriptionOfData/avevar')
-
+chdir(path2fortran_test)  # chdir is needed due to pytest working from root dir
 system('gfortran -c ' + path2fortran_source + '/avevar.f90 test_avevar.f90')
 system('gfortran avevar.o test_avevar.o -o ftest_avevar')  # Link objects
 system('rm *.o *.mod')  # Remove unnecessary objects and module
-
 chdir(owd)
 
 
-# Fortran interface function
+# Fortran wrapper function
 def fortran_avevar(data):
     aux = [str('') + str(s) + str('') for s in data]
     aux.insert(0, owd + '/' + path2fortran_test + '/ftest_avevar')
-    list_ = ((findall("\d+\.\d+", check_output(aux).decode("utf-8"))))
-    return list(map(float, list_))
+
+    result = run(aux, capture_output=True)
+    list_ = findall(r"\d+\.\d+", result.stdout.decode("utf-8"))
+    return [float(i) for i in list_]
 
 
 def test_avevar_10():

@@ -5,7 +5,6 @@
     Expected values obtained from SciPy
 """
 import pytest
-import numpy as np
 from re import findall
 from os import system, chdir, getcwd
 from subprocess import run
@@ -20,14 +19,12 @@ path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/student_ttest/differ
 
 owd = getcwd()
 chdir(path2fortran_test)  # chdir is needed due to pytest working from root dir
-
 system('gfortran -c ' + path2Ch6 + 'betacf/betacf.f90')
 system('gfortran -c ' + path2Ch6 + 'gammaln/gammaln.f90')
 system('gfortran -c ' + path2Ch6 + 'betai/betai.f90')
 system('gfortran -c ' + path2Ch13 + 'avevar/avevar.f90')
 system('gfortran -c ' + path2Ch13 + 'student_ttest/different_means/ttest.f90')
 system('gfortran -c test_ttest.f90')
-
 system('gfortran avevar.o betai.o betacf.o gammaln.o \
         ttest.o test_ttest.o -o ftest_ttest')  # Link objects
 system('rm *.o *.mod')  # Remove unnecessary objects and module
@@ -53,8 +50,8 @@ def test_ttest_means_0():
     """
         Checks against SciPy function
     """
-    data1 = np.array([1, 22, 3, 4, 5, 16, 7, 8, 9])
-    data2 = np.array([1.1, 2, 3, 4, 5, 6, 7, 18, 9])
+    data1 = [1, 22, 3, 4, 5, 16, 7, 8, 9]
+    data2 = [1.1, 2, 3, 4, 5, 6, 7, 18, 9]
 
     # Student's "t"
     calculated_value = fortran_ttest(data1, data2)[0]
@@ -73,8 +70,8 @@ def test_ttest_means_1():
     """
         Checks against SciPy function
     """
-    data1 = np.array([1, 22, 3, 4, 5, 16])
-    data2 = np.array([1.1, 2, 3, 4, 5, 6, 7, 18, 9])
+    data1 = [1, 22, 3, 4, 5, 16]
+    data2 = [1.1, 2, 3, 4, 5, 6, 7, 18, 9]
 
     # Student's "t"
     calculated_value = fortran_ttest(data1, data2)[0]
