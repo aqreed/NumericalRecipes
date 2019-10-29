@@ -45,8 +45,11 @@ program test_ttest
 
    ! calls the subroutine
    call ttest(data1, n1, data2, n2, t, prob)
-
+   
    ! output to stdout
    write(*, *) t, prob
+
+   deallocate(data1)
+   deallocate(data2)
 
 end program test_ttest
