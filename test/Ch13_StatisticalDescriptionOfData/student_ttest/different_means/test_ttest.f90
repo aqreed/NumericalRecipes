@@ -20,7 +20,7 @@ program test_ttest
    allocate(data1(n1))
 
    j = 1
-   do i = 2, n1 + 2
+   do i = 2, n1 + 1
       call getarg(i, x)
       read(x, '(f10.0)') y
       data1(j) = y
@@ -36,7 +36,7 @@ program test_ttest
    allocate(data2(n2))
 
    j = 1
-   do i = n1 + 3, n1 + 3 + n2
+   do i = n1 + 3, n1 + 2 + n2
       call getarg(i, x)
       read(x, '(f10.0)') y
       data2(j) = y
@@ -48,7 +48,7 @@ program test_ttest
    
    ! output to stdout
    write(*, *) t, prob
-
+   
    deallocate(data1)
    deallocate(data2)
 
