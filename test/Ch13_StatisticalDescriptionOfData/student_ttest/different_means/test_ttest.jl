@@ -1,5 +1,5 @@
 #=
-    Unit tests of the avevar function
+    Unit tests of the ttest function
 
     Expected values obtained from HypothesisTests package
 =#

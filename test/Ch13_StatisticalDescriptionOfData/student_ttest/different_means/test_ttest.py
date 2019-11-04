@@ -1,7 +1,7 @@
 """
     Unit tests of the Student t-test for difference of means
 
-    Expected values obtained from Scipy stats library
+    Expected values obtained from SciPy stats library
 """
 import pytest
 import numericalrecipes as nr
@@ -12,7 +12,7 @@ from numpy.testing import assert_almost_equal
 
 def test_ttest_means_0():
     """
-        Checks against scipy function
+        Checks against SciPy function
     """
     data1 = np.array([1, 22, 3, 4, 5, 16, 7, 8, 9])
     data2 = np.array([1.1, 2, 3, 4, 5, 6, 7, 18, 9])
@@ -32,7 +32,7 @@ def test_ttest_means_0():
 
 def test_ttest_means_1():
     """
-        Checks against scipy function
+        Checks against SciPy function
     """
     data1 = np.array([1, 22, 3, 4, 5, 16])
     data2 = np.array([1.1, 2, 3, 4, 5, 6, 7, 18, 9])
