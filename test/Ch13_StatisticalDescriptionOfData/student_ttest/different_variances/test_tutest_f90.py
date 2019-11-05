@@ -1,6 +1,6 @@
 """
-    Python interface for the unit tests of the
-    tutest Fortran function.
+    Python interface for the unit tests of the "tutest" Fortran function.
+    Contains the wrapper function and the tests.
 
     Expected values obtained from SciPy
 """
@@ -15,7 +15,7 @@ from numpy.testing import assert_almost_equal
 # Compile the Fortran tests source code to object files
 path2Ch13 = '../../../../src/numericalrecipes/Ch13_StatisticalDescriptionOfData/'
 path2Ch6 = '../../../../src/numericalrecipes/Ch6_SpecialFunctions/'
-path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/student_ttest/different_variances'
+path2fortran_test = 'test/Ch13_StatisticalDescriptionOfData/student_ttest/different_variances/'
 
 owd = getcwd()
 chdir(path2fortran_test)  # chdir is needed due to pytest working from root dir
@@ -35,7 +35,7 @@ chdir(owd)
 def fortran_tutest(data1, data2):
     aux = [str(len(data1))]
     aux += [str('') + str(s) + str('') for s in data1]
-    aux.insert(0, owd + '/' + path2fortran_test + '/ftest_tutest')
+    aux.insert(0, owd + '/' + path2fortran_test + 'ftest_tutest')
 
     aux_ = [str(len(data2))]
     aux_ += [str('') + str(s) + str('') for s in data2]
@@ -46,7 +46,7 @@ def fortran_tutest(data1, data2):
     return [float(i) for i in list_]  # returns student's t and significance
 
 
-def test_tutest_means_0():
+def test_tutest_0():
     """
         Checks against SciPy function
     """
@@ -57,16 +57,16 @@ def test_tutest_means_0():
     calculated_value = fortran_tutest(data1, data2)[0]
     expected_value = ttest_ind(data1, data2, equal_var=False)[0]
 
-    assert_almost_equal(calculated_value, expected_value, 1e-6)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
     # Student's "significance"
     calculated_value = fortran_tutest(data1, data2)[1]
     expected_value = ttest_ind(data1, data2, equal_var=False)[1]
 
-    assert_almost_equal(calculated_value, expected_value, 1e-6)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
-def test_tutest_means_1():
+def test_tutest_1():
     """
         Checks against SciPy function
     """
@@ -77,10 +77,10 @@ def test_tutest_means_1():
     calculated_value = fortran_tutest(data1, data2)[0]
     expected_value = ttest_ind(data1, data2, equal_var=False)[0]
 
-    assert_almost_equal(calculated_value, expected_value, 1e-6)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
     # Student's "significance"
     calculated_value = fortran_tutest(data1, data2)[1]
     expected_value = ttest_ind(data1, data2, equal_var=False)[1]
 
-    assert_almost_equal(calculated_value, expected_value, 1e-6)
+    assert_almost_equal(calculated_value, expected_value, 4)
