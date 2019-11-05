@@ -8,3 +8,4 @@ using NumericalRecipes
 @testset "test_avevar" begin include("Ch13_StatisticalDescriptionOfData/avevar/test_avevar.jl") end
 @testset "test_ttest" begin include("Ch13_StatisticalDescriptionOfData/student_ttest/different_means/test_ttest.jl") end
 @testset "test_tutest" begin include("Ch13_StatisticalDescriptionOfData/student_ttest/different_variances/test_tutest.jl") end
+@testset "test_tptest" begin include("Ch13_StatisticalDescriptionOfData/student_ttest/paired_samples/test_tptest.jl") end

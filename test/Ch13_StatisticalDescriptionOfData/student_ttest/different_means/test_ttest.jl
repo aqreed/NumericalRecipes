@@ -6,7 +6,7 @@
 using HypothesisTests
 
 
-@testset "test_ttest_means_0" begin
+@testset "test_ttest_0" begin
     #=
         Checks against HypothesisTests
     =#
@@ -27,7 +27,7 @@ using HypothesisTests
 end
 
 
-@testset "test_ttest_means_1" begin
+@testset "test_ttest_1" begin
     #=
         Checks against HypothesisTests
     =#
