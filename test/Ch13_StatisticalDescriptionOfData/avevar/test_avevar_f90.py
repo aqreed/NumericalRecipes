@@ -42,7 +42,7 @@ def test_avevar_10():
     calculated_value = fortran_avevar(data)[0]
     expected_value = 1.0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_avevar_11():
@@ -53,7 +53,7 @@ def test_avevar_11():
     calculated_value = fortran_avevar(data)[0]
     expected_value = 0.0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_avevar_12():
@@ -64,7 +64,7 @@ def test_avevar_12():
     calculated_value = fortran_avevar(data)[0]
     expected_value = 3
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_avevar_20():
@@ -75,7 +75,7 @@ def test_avevar_20():
     calculated_value = fortran_avevar(data)[1]
     expected_value = 0.0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_avevar_21():
@@ -86,7 +86,7 @@ def test_avevar_21():
     calculated_value = fortran_avevar(data)[1]
     expected_value = 2.5
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_avevar_22():
@@ -97,4 +97,4 @@ def test_avevar_22():
     calculated_value = fortran_avevar(data)[1]
     expected_value = 10.0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)

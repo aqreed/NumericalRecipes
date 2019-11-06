@@ -25,7 +25,7 @@ def test_gammaln():
     expected_value = [4.599479878042021722514, 0,
                       0, 3.178053830347945619647]
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_gammaln_recurrence():
@@ -47,4 +47,4 @@ def test_gammaln_recurrence():
     calculated_value = [c1, c2, c3, c4]
     expected_value = [0, 0, 0, 0]
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)

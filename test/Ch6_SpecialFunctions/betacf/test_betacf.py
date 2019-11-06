@@ -19,4 +19,4 @@ def test_betacf():
     calculated_value = nr.betacf(a, b, x)
     expected_value = 2.260324
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)

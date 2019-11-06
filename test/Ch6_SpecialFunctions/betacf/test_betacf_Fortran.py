@@ -56,4 +56,4 @@ def test_betacf():
     calculated_value = fortran_betacf(a, b, x)
     expected_value = 2.260324
 
-    assert_almost_equal(calculated_value, expected_value, 1e-4)
+    assert_almost_equal(calculated_value, expected_value, 4)

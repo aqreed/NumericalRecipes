@@ -59,7 +59,7 @@ def test_betai_x0():
     calculated_value = fortran_betai(a, b, x)
     expected_value = 0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_betai_x1():
@@ -71,7 +71,7 @@ def test_betai_x1():
     calculated_value = fortran_betai(a, b, x)
     expected_value = 1
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_betai_symmetry():
@@ -83,19 +83,18 @@ def test_betai_symmetry():
     calculated_value = fortran_betai(a, b, x) + fortran_betai(b, a, 1 - x)
     expected_value = 1
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
 
 
 def test_betai_recurrence():
     """
-        Checks relation Ix(a, b) = xIx(a−1, b) + (1−x)Ix(a, b−1)
+        Checks relation Ix(a, a) = 1/2 * I[4x(1−x)](a, 1/2)
     """
     a, b, x = 1, 10, 0.15
 
-    calculated_value = fortran_betai(a, b, x) - \
-                       x * fortran_betai(a - 1, b, x) - \
-                       (1 - x) * fortran_betai(a, b-1, x)
+    calculated_value = fortran_betai(a, a, x) - \
+                       (1/2) * fortran_betai(a, 1/2, 4*x*(1 - x))
 
     expected_value = 0
 
-    assert_almost_equal(calculated_value, expected_value)
+    assert_almost_equal(calculated_value, expected_value, 4)
