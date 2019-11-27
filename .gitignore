@@ -34,3 +34,6 @@ MANIFEST
 fmain*
 fspeed*
 ftest*
+
+# Julia
+.coverage
