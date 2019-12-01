@@ -4,10 +4,9 @@ module mod_tptest
    contains
 
    subroutine tptest(data1, n1, data2, n2, t, prob)
-      ! Given the arrays "data1" and "data2" of length "n", returns
-      ! the Student's "t" for paired data and its significance as "prob".
-      ! Small values of "prob" indicates that the arrays have different
-      ! means.
+      ! Given the arrays "data1" and "data2" of length "n", returns the
+      ! Student's "t" for paired data and its significance as "prob". Small
+      ! values of "prob" indicates that the arrays have different means.
       use mod_betai
       use mod_avevar
       implicit none
@@ -16,7 +15,6 @@ module mod_tptest
       integer                              :: n, i
       real(8)                              :: ave1, var1, ave2, var2, &
                                               df, t, prob, cov
-
 
       if (n1 /= n2) then
          write(*, *) "Data arrays must have the same size"
@@ -33,14 +31,16 @@ module mod_tptest
          cov = cov + (data1(i) - ave1) * (data2(i) - ave2)
       end do
 
+      ! Degrees of freedom
       df = n - 1.0d0
+      
       cov = cov / df
 
       ! Student's t
       t = (ave1 - ave2) / sqrt((var1 + var2 - 2.0d0 * cov) / n)
 
-      ! significance
-      prob = betai(0.5d0 * df, 0.5d0, (df/(df + t**2)))
+      ! Significance
+      prob = betai(0.5d0 * df, 0.5d0, (df / (df + t**2)))
    end subroutine tptest
 
 end module mod_tptest
