@@ -1,13 +1,13 @@
 ### Student's t-test for significantly different means
 
-The Jupyter notebooks compare both Julia and Python versions of the code with the Fortran, C and C++ ones. The results show clearly that Julia is faster than Python when we benchmark both of them to these compiled languages:
+The Jupyter notebooks compare both Julia and Python versions of the code with the Fortran, C and C++ ones. The comparison consists in a simple loop, executing the function a million times. The results show clearly that Julia is faster than Python:
 
-| |Python|Julia|
-|-|------|-----|
-|Fortran| ~24.6 times slower| ~1.5 times faster|
-|C| TBD| TBD|
-|C++| TBD| TBD|
-
-_Note:_ this must be read as _"in a Python script, using a Python function is 24.6 times slower than calling Fortran executable code from the same script"_
+| Languague | Time |
+| - | - |
+| Python | 20.3 s |
+| Julia | 499 ms |
+| Fortran | 702 ms |
+| C | TBD |
+| C++ | TBD |
 
 The Fortran source code will be compiled along the necessary libs using a Python script (_compile_fortran.py_). This script will be called at the beginning of each notebook.
