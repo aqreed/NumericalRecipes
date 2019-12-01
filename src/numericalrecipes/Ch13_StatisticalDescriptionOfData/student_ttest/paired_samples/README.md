@@ -4,7 +4,7 @@ The Jupyter notebooks compare both Julia and Python versions of the code with th
 
 | Languague | Time |
 | - | - |
-| Python |  s |
+| Python | 30.4 s |
 | Julia | 415 ms |
 | Fortran | 598 ms |
 | C | TBD |

@@ -1,7 +1,7 @@
 program main
    ! COMPILATION:
-   ! gfortran -c betacf.f90 gammaln.f90 betai.f90 ttest.f90
-   ! gfortran betacf.o gammaln.o betai.o ttest.o -o fmain_ttest
+   ! gfortran -c betacf.f90 gammaln.f90 betai.f90 ttest.f90 speed_ttest.f90
+   ! gfortran betacf.o gammaln.o betai.o ttest.o speed_ttest.o -o fspeed_ttest
    use mod_ttest
    implicit none
    integer                              :: n1, n2, i, c1, c2, cr
