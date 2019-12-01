@@ -4,19 +4,17 @@ program test_tutest
    ! gfortran avevar.o betacf.o gammaln.o betai.o tutest.o test_tutest.0 -o ftest_tutest
    use mod_tutest
    implicit none
-
    character(len = 100)                :: x
    real(8)                             :: y, t, prob
    integer                             :: i, j, n1, n2
    real(8), dimension(:), allocatable  :: data1, data2
 
-
    ! 1st array
-   ! get 1st argument, which contains the length
+   ! Get 1st argument, which contains the length
    call getarg(1, x)
    read(x, '(i100)') n1
  
-   ! captures the next n1 arguments, containing the array
+   ! Captures the next n1 arguments, containing the array
    allocate(data1(n1))
 
    j = 1
@@ -28,11 +26,11 @@ program test_tutest
    end do
 
    ! 2nd array
-   ! gets (n1 + 2)th argument, which contains the length
+   ! Get (n1 + 2)th argument, which contains the length
    call getarg(n1 + 2, x)
    read(x, '(i100)') n2   
 
-   ! captures the next n2 arguments, containing the array
+   ! Captures the next n2 arguments, containing the array
    allocate(data2(n2))
 
    j = 1
@@ -43,10 +41,10 @@ program test_tutest
       j = j + 1
    end do
 
-   ! calls the subroutine
+   ! Call the subroutine
    call tutest(data1, n1, data2, n2, t, prob)
    
-   ! output to stdout
+   ! Output to stdout
    write(*, *) t, prob
    
    deallocate(data1)

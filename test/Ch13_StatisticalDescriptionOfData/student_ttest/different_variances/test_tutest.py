@@ -1,7 +1,7 @@
 """
     Unit tests of the Student t-test for difference of variances
 
-    Expected values obtained from Scipy stats library
+    Expected values obtained from SciPy stats library
 """
 import pytest
 import numericalrecipes as nr

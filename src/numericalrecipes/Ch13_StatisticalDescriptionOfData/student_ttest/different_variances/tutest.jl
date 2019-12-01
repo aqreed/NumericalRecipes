@@ -16,11 +16,14 @@ function tutest(data1, data2)
     ave2, var2 = avevar(data2)
 
     # Student's t
-    t = (ave1 - ave2) / sqrt(var1/n1 + var2/n2)
+    t = (ave1 - ave2) / sqrt(var1 / n1 + var2 / n2)
 
-    df = (var1/n1 + var2/n2)^2 / ((var1/n1)^2 / (n1 - 1) + (var2/n2)^2 / (n2 - 1))
-    # significance
-    prob = betai(0.5 * df, 0.5, df/(df + t^2))
+    # Degrees of freedom
+    df = (var1 / n1 + var2 / n2)^2 / ((var1 / n1)^2 / (n1 - 1) + 
+                                      (var2 / n2)^2 / (n2 - 1))
+
+    # Significance
+    prob = betai(0.5 * df, 0.5, df / (df + t^2))
 
     return t, prob
 end
