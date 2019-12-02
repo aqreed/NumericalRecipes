@@ -2,16 +2,14 @@
     Script to compile the Fortran files required to serve
     as benchmark in the Julia and Python notebooks.
 """
-from os import system, path
+from os import system
 
 
-# Compile modules Fortran source code to object files
+# Compile Fortran modules and source code to object files
 system('gfortran -c ../../../Ch6_SpecialFunctions/betacf/betacf.f90')
 system('gfortran -c ../../../Ch6_SpecialFunctions/gammaln/gammaln.f90')
 system('gfortran -c ../../../Ch6_SpecialFunctions/betai/betai.f90')
 system('gfortran -c ../../avevar/avevar.f90')
-
-# Compile main Fortran program source code
 system('gfortran -c tptest.f90 speed_tptest.f90')
 
 # Link the objects to create the executable
