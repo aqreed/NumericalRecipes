@@ -1,9 +1,7 @@
 module mod_betacf
    ! Contains the following functions: betacf
-
    implicit none
    contains
-   
 
    function betacf(a, b, x)
       ! Continued fraction for incomplete beta function, used by "betai"  
@@ -23,8 +21,8 @@ module mod_betacf
       qap = a + 1.0d0
       qam = a - 1.0d0
       bz = 1.0d0 - (qab * x) / qap
-      
-      !continued fraction evaluation using recurrence
+
+      ! Continued fraction evaluation using recurrence
       do m = 1, imax
          em = m
          tem = em + em

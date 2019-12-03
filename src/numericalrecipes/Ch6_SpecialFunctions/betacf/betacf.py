@@ -2,8 +2,7 @@ import sys
 
 
 def betacf(a, b, x):
-    # Continued fraction for incomplete beta function,
-    # used by "betai"
+    # Continued fraction for incomplete beta function, used by "betai"
     eps = 3.0e-7
     imax = 100
 
@@ -13,7 +12,7 @@ def betacf(a, b, x):
     qam = a - 1
     bz = 1. - (qab * x) / qap
 
-    # continued fraction evaluation using recurrence
+    # Continued fraction evaluation using recurrence
     for m in range(1, imax):
         em = m
         tem = em + em
