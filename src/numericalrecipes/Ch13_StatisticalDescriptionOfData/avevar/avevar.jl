@@ -1,5 +1,6 @@
 # Contains the function(s): avevar
 
+
 function avevar(data)
     # Given an array "data" of length "n", returns
     # its mean "ave" and its variance "var"

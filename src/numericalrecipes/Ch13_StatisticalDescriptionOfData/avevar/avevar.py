@@ -3,8 +3,8 @@ from numba import jit
 
 @jit(nopython=True)
 def avevar(data):
-    # Given an array "data" of length "n", returns
-    # its mean "ave" and its variance "var"
+    # Given an array "data" of length "n", returns its mean
+    # "ave" and its variance "var"
     n = len(data)
     ave, var = 0, 0
 

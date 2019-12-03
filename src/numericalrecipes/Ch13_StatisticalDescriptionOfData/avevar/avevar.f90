@@ -3,7 +3,6 @@ module mod_avevar
    implicit none
    contains
 
-
    subroutine avevar(data, n, ave, var)
       ! Given an array "data" of length "n", returns
       ! its mean "ave" and its variance "var"
