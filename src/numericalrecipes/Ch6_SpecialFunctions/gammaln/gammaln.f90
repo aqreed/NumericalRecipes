@@ -1,9 +1,7 @@
 module mod_gammaln
    ! Contains the following functions: gammaln
-   
    implicit none
    contains
-
 
    function gammaln(xx)
       ! Returns the value of ln[gamma(XX)] for X > 0. Full accuracy is 

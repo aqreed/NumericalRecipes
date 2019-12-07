@@ -20,4 +20,5 @@ def gammaln(xx):
         ser = ser + cof[i] / x
 
     gammaln = tmp + np.log(stp * ser)
+
     return gammaln
