@@ -54,7 +54,7 @@ def test_betai_recurrence():
     a, b, x = 2, 10, 0.115
 
     calculated_value = nr.betai(a, a, x) - \
-                      (1/2) * nr.betai(a, 1/2, 4*x*(1 - x))
+                       (1/2) * nr.betai(a, 1 / 2, 4 * x * (1 - x))
     expected_value = 0
 
     assert_almost_equal(calculated_value, expected_value, 4)

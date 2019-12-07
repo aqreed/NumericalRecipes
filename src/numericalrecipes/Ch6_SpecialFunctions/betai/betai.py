@@ -5,7 +5,6 @@ import numericalrecipes as nr
 
 def betai(a, b, x):
     # Returns the incomplete beta function Ix(a, b)
-
     if ((x < 0) or (x > 1)):
         print('BETAI: bad argument fo x')
         sys.exit()

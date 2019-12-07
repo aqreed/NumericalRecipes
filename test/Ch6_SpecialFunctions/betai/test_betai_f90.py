@@ -93,7 +93,7 @@ def test_betai_recurrence():
     a, b, x = 1, 10, 0.15
 
     calculated_value = fortran_betai(a, a, x) - \
-                       (1/2) * fortran_betai(a, 1/2, 4*x*(1 - x))
+                       (1 / 2) * fortran_betai(a, 1 / 2, 4 * x * (1 - x))
 
     expected_value = 0
 

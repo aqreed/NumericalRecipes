@@ -1,11 +1,9 @@
 module mod_betai
    ! Contains the following functions: betai
-
    use mod_betacf
    use mod_gammaln
    implicit none
    contains
-
 
    function betai(a, b, x)
       ! Returns the incomplete beta function Ix(a, b)
@@ -36,6 +34,7 @@ module mod_betai
          betai = 1.0d0 - bt * betacf(b, a, 1.0d0 - x) / b
          return
       end if
+
    end function betai
 
 end module mod_betai
