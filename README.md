@@ -67,19 +67,17 @@ Press "]" to enter `pkg` mode. Then activate the pkg:
 ``` julia
   (v1.1) pkg> activate .
   (NumericalRecipes) pkg>
-
 ```
 
 Then, return to normal mode to import functions, which may be called as:
 
 ```julia
-import NumericalRecipes
-NumericalRecipes.gammaln(1)
+  julia> using NumericalRecipes
+  julia> gammaln(1)
 ```
 Run tests with:
 
 ``` julia
   julia> using Pkg
-
   julia> Pkg.test("NumericalRecipes")
 ```
