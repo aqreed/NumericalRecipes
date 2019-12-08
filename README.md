@@ -13,27 +13,27 @@
 | Julia Version | 1.1 |
 | Julia Requires | HypothesisTests, Test |
 
-Is Julia as fast as Fortran, C or C++, and as easy as Python? 
+Is Julia as fast as Fortran, and as easy as Python?
 
 I will try to answer this question using the algorithms found in Press, W. H., Flannery, B. P., Teukolsky, S. A., Vetterling, W. T., 1986, _Numerical Recipes. The Art of Scientific Computing_, Cambridge University Press, 818 p
 
-Each algorithm will have a separated directory containing source code and speed test in the compiled languages (Fortran, C, C++), Julia and Python. The naming criteria is:
+Each algorithm will have a separated directory containing source code and speed test in the compiled language (Fortran), Julia and Python. The naming criteria is:
 
 - [algorithm].f90
 - speed_[algorithm].f90
 - [algorithm].jl
 - [algorithm].py
 
-Also two Jupyter notebooks will compare Julia and Python scripts time execution against the compiled languages:
+Also two Jupyter notebooks will compare Julia and Python scripts time execution against the compiled language:
 
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
 
-Python will be also used for testing and compiling Fortran source code:
+The Fortran source code will be compiled along the necessary libs using a Python script:
 
-- compile_Fortran.py
+- compile_fortran.py
 
-And finally the results will be summarized in a readme file.
+This script will be called at the beginning of each notebook. Finally the results will be summarized in a readme file.
 
 #### Python install and tests
 
