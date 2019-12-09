@@ -1,0 +1,12 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+
+## [0.0.1] - 2019-12-09
+### Added
+- First release with the next functions in Python, Julia and Fortran:
+	* from Chapter 6: betacf, betai, gammaln
+	* from Chapter 13: avevar, ttest, tutest, tptes
