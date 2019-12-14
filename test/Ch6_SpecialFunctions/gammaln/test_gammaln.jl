@@ -50,7 +50,6 @@ end
         Accordingly, this test checks that gamma log satisfies:
             gammaln(z+1) = ln(z) + gammaln(z)
     =#
-
     x1, x2, x3, x4 = 0.001, 1.1, 3.32, 23.11
 
     c1 = gammaln(x1 + 1) - (log(x1) + gammaln(x1))
@@ -62,4 +61,27 @@ end
     expected_value = [0, 0, 0, 0]
 
     @test isapprox(calculated_value, expected_value; atol=1e-8)
+end
+
+
+@testset "test_gammaln_factorial" begin
+    #=
+        Gamma function satisfies the recurrence relation for
+        positive integer values:
+            gamma(z) = (z-1)!
+
+        Accordingly, this test checks that gamma log satisfies:
+            exp[gammaln(z)] = (z-1)!
+    =#
+    x1, x2, x3, x4 = 1, 2, 6, 9
+
+    c1 = exp(gammaln(x1)) - factorial(x1 - 1)
+    c2 = exp(gammaln(x2)) - factorial(x2 - 1)
+    c3 = exp(gammaln(x3)) - factorial(x3 - 1)
+    c4 = exp(gammaln(x4)) - factorial(x4 - 1)
+
+    calculated_value = [c1, c2, c3, c4]
+    expected_value = [0, 0, 0, 0]
+
+    @test isapprox(calculated_value, expected_value; atol=1e-4)
 end

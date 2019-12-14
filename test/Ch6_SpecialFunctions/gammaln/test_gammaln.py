@@ -48,3 +48,26 @@ def test_gammaln_recurrence():
     expected_value = [0, 0, 0, 0]
 
     assert_almost_equal(calculated_value, expected_value, 4)
+
+
+def test_gammaln_factorial():
+    """
+        Gamma function satisfies the recurrence relation for
+        positive integer values:
+            gamma(z) = (z-1)!
+
+        Accordingly, this test checks that gamma log satisfies:
+            exp[gammaln(z)] = (z-1)!
+    """
+
+    x1, x2, x3, x4 = 1, 2, 6, 9
+
+    c1 = np.exp(nr.gammaln(x1)) - np.math.factorial(x1 - 1)
+    c2 = np.exp(nr.gammaln(x2)) - np.math.factorial(x2 - 1)
+    c3 = np.exp(nr.gammaln(x3)) - np.math.factorial(x3 - 1)
+    c4 = np.exp(nr.gammaln(x4)) - np.math.factorial(x4 - 1)
+
+    calculated_value = [c1, c2, c3, c4]
+    expected_value = [0, 0, 0, 0]
+
+    assert_almost_equal(calculated_value, expected_value, 4)

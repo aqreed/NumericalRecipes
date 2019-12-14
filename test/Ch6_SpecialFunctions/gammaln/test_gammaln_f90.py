@@ -59,13 +59,34 @@ def test_gammaln_recurrence():
         Accordingly, this test checks that gamma log satisfies:
             gammaln(z+1) = ln(z) + gammaln(z)
     """
-
     x1, x2, x3, x4 = 0.001, 1.1, 3.32, 23.11
 
     c1 = fortran_gammaln(x1 + 1) - (np.log(x1) + fortran_gammaln(x1))
     c2 = fortran_gammaln(x2 + 1) - (np.log(x2) + fortran_gammaln(x2))
     c3 = fortran_gammaln(x3 + 1) - (np.log(x3) + fortran_gammaln(x3))
     c4 = fortran_gammaln(x4 + 1) - (np.log(x4) + fortran_gammaln(x4))
+
+    calculated_value = [c1, c2, c3, c4]
+    expected_value = [0, 0, 0, 0]
+
+    assert_almost_equal(calculated_value, expected_value, 4)
+
+
+def test_gammaln_factorial():
+    """
+        Gamma function satisfies the recurrence relation for
+        positive integer values:
+            gamma(z) = (z-1)!
+
+        Accordingly, this test checks that gamma log satisfies:
+            exp[gammaln(z)] = (z-1)!
+    """
+    x1, x2, x3, x4 = 1, 2, 6, 9
+
+    c1 = np.exp(fortran_gammaln(x1)) - np.math.factorial(x1 - 1)
+    c2 = np.exp(fortran_gammaln(x2)) - np.math.factorial(x2 - 1)
+    c3 = np.exp(fortran_gammaln(x3)) - np.math.factorial(x3 - 1)
+    c4 = np.exp(fortran_gammaln(x4)) - np.math.factorial(x4 - 1)
 
     calculated_value = [c1, c2, c3, c4]
     expected_value = [0, 0, 0, 0]
