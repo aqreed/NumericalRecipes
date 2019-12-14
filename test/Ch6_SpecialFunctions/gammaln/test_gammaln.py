@@ -30,10 +30,10 @@ def test_gammaln():
 
 def test_gammaln_recurrence():
     """
-        Gamma log function satisfies the recurrence relation:
+        Gamma function satisfies the recurrence relation:
             gamma(z+1) = z * gamma(z)
 
-        Accordingly, this test checks that:
+        Accordingly, this test checks that gamma log satisfies:
             gammaln(z+1) = ln(z) + gammaln(z)
     """
 
