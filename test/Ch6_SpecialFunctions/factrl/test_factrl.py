@@ -27,22 +27,12 @@ class Test_factrl_input(ut.TestCase):
         self.assertRaises(TypeError, nr.factrl, '[0, 1]')
 
     def test_fctrl(self):
-        expected_value = 1
-        calculated_value = nr.factrl(1)
-        self.assertEqual(calculated_value, expected_value)
+        c1 = 1 - nr.factrl(1)
+        c2 = 120 - nr.factrl(5)
+        c3 = np.math.factorial(10) - nr.factrl(10)
+        c4 = np.math.factorial(15) - nr.factrl(15)
+        c5 = np.math.factorial(20) - nr.factrl(20)
 
-        expected_value = 120
-        calculated_value = nr.factrl(5)
-        self.assertEqual(calculated_value, expected_value)
-
-        expected_value = np.math.factorial(10)
-        calculated_value = nr.factrl(10)
-        self.assertEqual(calculated_value, expected_value)
-
-        expected_value = np.math.factorial(15)
-        calculated_value = nr.factrl(15)
-        self.assertEqual(calculated_value, expected_value)
-
-        expected_value = np.math.factorial(20)
-        calculated_value = nr.factrl(20)
+        calculated_value = [c1, c2, c3, c4, c5]
+        expected_value = [0, 0, 0, 0, 0]
         self.assertEqual(calculated_value, expected_value)
