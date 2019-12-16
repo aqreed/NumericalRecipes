@@ -5,7 +5,6 @@
     the Incomplete Beta Function" (1941), Ann. Math. Statist. 218-223
     [URL] https://projecteuclid.org/download/pdf_1/euclid.aoms/1177731751
 """
-import pytest
 import numericalrecipes as nr
 from numpy.testing import assert_almost_equal
 

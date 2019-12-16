@@ -4,7 +4,6 @@
 
     Expected values obtained from SciPy
 """
-import pytest
 from re import findall
 from os import system, chdir, getcwd
 from subprocess import run

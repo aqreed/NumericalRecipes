@@ -3,7 +3,6 @@
 
     Expected values obtained from SciPy stats library
 """
-import pytest
 import numericalrecipes as nr
 import numpy as np
 from scipy.stats import ttest_ind

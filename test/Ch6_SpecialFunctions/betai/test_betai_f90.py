@@ -9,7 +9,6 @@
         $ gfortran -c lib_stat.f90 test_betai.f90
         $ gfortran lib_stat.o test_betai.o -o fmain_test_betai
 """
-import pytest
 from os import system, chdir, getcwd
 from subprocess import check_output
 from numpy.testing import assert_almost_equal

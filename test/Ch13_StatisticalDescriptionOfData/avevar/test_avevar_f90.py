@@ -5,7 +5,6 @@
     Expected values obtained from:
         [URL] http://www.alcula.com/calculators/statistics/variance/
 """
-import pytest
 from re import findall
 from os import system, chdir, getcwd
 from subprocess import run

@@ -5,7 +5,6 @@
     Expected values extracted from:
         [URL] https://keisan.casio.com/exec/system/1180573442
 """
-import pytest
 import numpy as np
 from os import system, chdir, getcwd
 from subprocess import check_output
