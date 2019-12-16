@@ -12,6 +12,7 @@ def factrl(n):
 
     if (n < 0):
         print("Can not calculate negative factorial")
+        raise ValueError
     elif (n <= ntop):
         factrl = A[n]
     elif (n <= 32):
