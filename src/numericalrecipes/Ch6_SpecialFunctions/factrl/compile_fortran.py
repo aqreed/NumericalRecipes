@@ -7,10 +7,10 @@ from os import system, chdir, getcwd
 
 # Compile the Fortran tests source code to object files
 system('gfortran -c ../gammaln/gammaln.f90')  # compile gammaln
-system('gfortran -c factrl.f90')
+system('gfortran -c factrl.f90 speed_factrl.f90')
 
 # Link the objects to create the executable
-system('gfortran gammaln.o factrl.o')
+system('gfortran gammaln.o factrl.o speed_factrl.o -o fspeed_factrl')
 
 # Remove unnecessary objects and module
 system('rm *.o *.mod')
