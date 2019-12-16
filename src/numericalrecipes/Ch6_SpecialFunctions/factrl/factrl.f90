@@ -33,12 +33,3 @@ module mod_factrl
    end function factrl
 
 end module mod_factrl
-
-
-program main
-   use mod_factrl
-   implicit none
-   real(8) :: a
-   a = factrl(170)
-   write(*, *) a
-end program main
