@@ -9,7 +9,8 @@ function factrl(n)
     A[1] = 1.0
     
     if (n < 0)
-        error("Can not calculate negative factorial")
+        msg = "Can not calculate negative factorial"
+        throw(ArgumentError(msg))
     elseif (n <= ntop)
         factrl = A[n + 1]
     elseif (n <= 32)
