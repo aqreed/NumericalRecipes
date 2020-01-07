@@ -37,3 +37,6 @@ ftest*
 
 # Julia
 .coverage
+
+# C++
+cppSpeed*
