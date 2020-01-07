@@ -5,33 +5,35 @@
 
 |  |  |
 | ------ | ------ |
-| Description | Julia vs Python vs Fortran comparison using "Numerical Recipes" |
-| Author | aqreed <aqreed@protonmail.com> |
+| Description | Julia vs Python, Fortran and C++ comparison using "Numerical Recipes" |
+| Author | aqreed |
 | Version | 0.0.1 |
 | Python Version | 3.6 |
 | Python Requires | Numpy, Numba, Scipy |
 | Julia Version | 1.1 |
 | Julia Requires | HypothesisTests, Test |
 
-Is Julia as fast as Fortran, and as easy as Python?
+Is Julia as fast as Fortran or C++, and as easy as Python?
 
 I will try to answer this question using the algorithms found in Press, W. H., Flannery, B. P., Teukolsky, S. A., Vetterling, W. T., 1986, _Numerical Recipes. The Art of Scientific Computing_, Cambridge University Press, 818 p
 
-Each algorithm will have a separated directory containing source code and speed test in the compiled language (Fortran), Julia and Python. The naming criteria is:
+Each algorithm will have a separated directory containing source code and speed test in the compiled languages (Fortran and C++), Julia and Python. The naming criteria is:
 
-- [algorithm].f90
-- speed_[algorithm].f90
 - [algorithm].jl
 - [algorithm].py
+- [algorithm].f90
+- speed_[algorithm].f90
+- [algorithm].cpp
+- speed_[algorithm].cpp
 
 Also two Jupyter notebooks will compare Julia and Python scripts time execution against the compiled language:
 
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
 
-The Fortran source code will be compiled along the necessary libs using a Python script:
+The Fortran anc C++ source code will be compiled along the necessary libs using a Python script:
 
-- compile_fortran.py
+- compile_[algorithm].py
 
 This script will be called at the beginning of each notebook. Finally the results will be summarized in a readme file.
 
