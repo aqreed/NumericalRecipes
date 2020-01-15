@@ -8,6 +8,9 @@ double gammaln(float x);
 
 
 int main() {
+   /* Function that measures elapsed time of a for loop
+      that calculates gammaln */
+
    // Input data
    float gl, x = 0.25;
 

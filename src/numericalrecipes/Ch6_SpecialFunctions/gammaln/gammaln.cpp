@@ -3,8 +3,9 @@
 
 
 double gammaln(float xx){
-   // Returns the value of ln[gamma(XX)] for X > 0. Full accuracy is
-   // obtained for XX > 1.
+   /* Returns the value of ln[gamma(XX)] for X > 0. Full accuracy
+      is obtained for XX > 1.*/
+
    double stp = 2.50662827465, cof[] = {76.18009173e0, -86.50532033e0,
                                         24.01409822e0, -1.231739516e0,
                                         0.120858003e-2, -0.536382e-5};
