@@ -2,7 +2,7 @@
 #include <math.h>
 
 
-double gammaln(float xx){
+double gammaln(double xx){
    /* Returns the value of ln[gamma(XX)] for X > 0. Full accuracy
       is obtained for XX > 1.*/
 
