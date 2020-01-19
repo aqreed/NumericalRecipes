@@ -36,5 +36,5 @@ def betacf(a, b, x):
             print('BETACF: a or b too big, or imax too small')
             sys.exit()
 
-        betacf = az
-        return betacf
+    betacf = az
+    return betacf
