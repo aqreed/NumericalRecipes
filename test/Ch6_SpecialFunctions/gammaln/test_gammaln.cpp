@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
       calculates gammaln and redirects it to stdout */
 
    double y = stod(argv[1]);
-
+   cout.precision(17);
    cout << gammaln(y) << endl;
 
    return 0; 
