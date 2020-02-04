@@ -8,7 +8,7 @@ matrix:
 
     branches:
       only:
-        - new_package_name
+        - dev
 
     before_install:
       # http://conda.pydata.org/docs/travis.html
@@ -19,7 +19,7 @@ matrix:
       - conda config --set always_yes yes --set changeps1 no
       - conda update -q conda
       - sudo apt-get install gfortran 
-      - sudo apt install build-essential
+      - sudo apt install g++
 
       # Useful for debugging any issues with conda
       - conda info -a
@@ -45,7 +45,7 @@ matrix:
 
     branches:
       only:
-        - new_package_name
+        - dev
 
     notifications:
       email: false
