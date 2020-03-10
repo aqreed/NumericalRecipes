@@ -1,3 +1,4 @@
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -28,16 +29,60 @@ MANIFEST
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Fortran
+### Fortran ###
+# Module files
 *.mod
+*.smod
+# Compiled object files
 *.o
+# NR executables
 fmain*
 fspeed*
 ftest*
 
-# Julia
+### Julia ###
 .coverage
 
-# C++
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Embedded Target files
+*.lst
+*.sym
+*.asm
+*.rel
+*.s
+
+# code coverage files
+*.gc*
+
+# NR executables
 cppSpeed*
 cpptest*
