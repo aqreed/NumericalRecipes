@@ -1,5 +1,6 @@
-// Contains the following functions: gammaln
+/* Contains the following functions: gammaln */
 #include <math.h>
+#include <ch6.h>
 
 
 double gammaln(double xx){
