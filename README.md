@@ -1,7 +1,8 @@
 # NumericalRecipes
 
-[![Build Status](https://travis-ci.com/aqreed/NumericalRecipes.svg?branch=new_package_name)](https://travis-ci.com/aqreed/NumericalRecipes)
-[![codecov.io](https://codecov.io/gh/aqreed/NumericalRecipes/branch/new_package_name/graph/badge.svg)](https://codecov.io/gh/aqreed/NumericalRecipes/branch/new_package_name)
+[![Build Status](https://travis-ci.com/aqreed/NumericalRecipes.svg?branch=dev)](https://travis-ci.com/aqreed/NumericalRecipes)
+[![codecov.io](https://codecov.io/gh/aqreed/NumericalRecipes/branch/dev/graph/badge.svg)](https://codecov.io/gh/aqreed/NumericalRecipes/branch/dev)
+[![Coverage Status](https://coveralls.io/repos/github/aqreed/NumericalRecipes/badge.svg?branch=dev)](https://coveralls.io/github/aqreed/NumericalRecipes?branch=dev)
 
 |  |  |
 | ------ | ------ |
@@ -31,7 +32,7 @@ Also two Jupyter notebooks will compare Julia and Python scripts time execution 
 - [algorithm]_julia.ipynb
 - [algorithm]_python.ipynb
 
-The Fortran anc C++ source code will be compiled along the necessary libs using a Python script:
+The Fortran anc C++ source code for the speed tests will be compiled along the necessary libs using a Python script:
 
 - compile_[algorithm].py
 
@@ -82,4 +83,12 @@ Run tests with:
 ``` julia
   julia> using Pkg
   julia> Pkg.test("NumericalRecipes")
+```
+
+#### C++ tests
+
+To run the tests, execute the script `run_coverage_test.sh` from `root` dir:
+
+``` console
+  $ ./run_coverage_test.sh
 ```
